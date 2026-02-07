@@ -1,18 +1,15 @@
-This is a customized python block to support on a specific purpose ; As the title suggests, this is “RAG-like” tool which can be positioned in between a true RAG and performing a manual search.
+This is a customized Python tool built for a specific purpose. As the name suggests, it is a “RAG-like” utility that sits between a full-fledged RAG system and a purely manual search.
 
-This is meant to support students who want to keep their memory refreshed from the past questions that they have taken up retrieved from a question bank of previous tests with a semantic search of current questions – one at a time. 
+The tool is intended for students who want to refresh and deepen their understanding by revisiting past questions from earlier tests. It enables semantic search over a question bank, allowing users to retrieve similar questions one at a time while working on new ones.
 
-I felt a need for this tool during my academic pursuit for past few months. I have been studying AI and ML topics  in a systematic manner taking up series of certification courses. As a part of learning, I also had started taking tests from Chat GPT on weekly basis which consists a combination of  MCQ as well as conceptual questions and questions involving practical scenario.
+I felt the need for this tool during my academic journey over the past few months while studying AI and ML in a structured manner through certification courses. As part of this process, I regularly took weekly tests using ChatGPT, consisting of MCQs, conceptual questions, and scenario-based problems.
 
-By using a dedicated thread for taking up such tests & evaluation, I started noticing - with interest -  the mild variations and deeper level of similar concepts tested in subsequent question papers making each weekly tests as an enriching experience. All such LLMs also give meta level feedback when we probe their evaluation and challenge their reviews which is even more useful.
+Over time, I began noticing subtle variations and deeper probing of the same core concepts across different test papers. Revisiting these semantically similar questions turned each weekly test into a richer learning experience. Probing the evaluation logic of LLMs and challenging their feedback also added a valuable meta-learning layer.
 
-While it was quite easy to take up the initial tests without accumulated memory - after crossing 8 to 10 weeks – I started realizing that it is an opportunity to review the semantically similar questions of the past and attempt the questions with better quality and precision.
+While it was easy to manage without accumulated memory initially, after 8–10 weeks I realized the opportunity to systematically revisit past questions, attempt them with greater precision, and improve answer quality.
 
-After all, any test is taken up only to deepen our understanding and not to test our superficial memory particularly when we are serious and sincere.
-Two distinct advantages which I realized personally  by using this tool
-(1) Understanding any concept is more a spiral process where we get more insight as we circle back to similar topics in a systematic manner periodically
-(2) The number of instances when we refer back to the Question Bank comes down in lot more cases as the knowledge really deepens by expansion of our “known” territory.
+I personally observed two advantages from using this approach. First, understanding any concept is a spiral process — insights deepen as we return to similar topics periodically. Second, as knowledge genuinely expands, dependence on the question bank naturally reduces.
 
-This self help tool is extremely useful for me – but to use this one needs to understand its purpose and requires self discipline to use it diligently only when needed.
+This self-help tool has been extremely useful for me. However, it works best when its purpose is clearly understood and when it is used with discipline — only as a support mechanism, not a crutch.
 
 Sharing with delight.
