@@ -13,6 +13,6 @@ Two distinct advantages which I realized personally  by using this tool
 (1) Understanding any concept is more a spiral process where we get more insight as we circle back to similar topics in a systematic manner periodically
 (2) The number of instances when we refer back to the Question Bank comes down in lot more cases as the knowledge really deepens by expansion of our “known” territory.
 
-So, this is a self help tool – which is extremely handy for me – needs self discipline to use sparingly.
+This self help tool is extremely useful for me – but to use this one needs to understand its purpose and requires self discipline to use it diligently only when needed.
 
 Sharing with delight.
