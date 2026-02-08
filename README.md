@@ -19,29 +19,25 @@ Sharing with delight.
 
 ## Quick Start (No Customization)
 
-Download or clone the entire repository locally
+1) Download or clone the entire repository locally
 
-Run RAG_WO_G_Streamlit.py
+2) Run RAG_WO_G_Streamlit.py
 
-Select AI or ML question bank
+3) Select AI or ML question bank
 
-Enter a query to retrieve semantically similar questions
+4) Enter a query to retrieve semantically similar questions
 
 ## Customization (Using Your Own Question Bank)
 
-Replace the contents of the respective Question Bank files
+1) Replace the contents of the respective Question Bank files
 
-Ensure each question ends with ? or .
+2) Ensure each question ends with ? or .
 
-Run the rebuild scripts:
-
+3) Run the rebuild scripts:
 RAG_WO_G_AI_Rebuild.py
-
 RAG_WO_G_ML_Rebuild.py
 (This regenerates the FAISS index and stored texts)
 
-Do NOT modify the *_Runtime.py files
+4) Do NOT modify the *_Runtime.py files (These are read-only runtime loaders used by Streamlit)
 
-These are read-only runtime loaders used by Streamlit
-
-Run RAG_WO_G_Streamlit.py again to query your customized data
+5) Run RAG_WO_G_Streamlit.py again to query your customized data
