@@ -22,39 +22,19 @@ This self-help tool has been extremely useful for me. However, it works best whe
 
 Sharing with delight.
 
+## Setup & Run
 
+### Prerequisites
+- Python 3.9+
+- OpenAI API key available as an environment variable
 
+## Setup & Run
 
-## How to Use the Tool
-### Quick Start (No Customization)
+### Prerequisites
+- Python 3.9+
+- OpenAI API key available as an environment variable
 
-Download or clone the entire repository locally
-
-Run RAG_WO_G_Streamlit.py
-
-Select AI or ML question bank
-
-Enter a query to retrieve semantically similar questions
-
-### Customization (Using Your Own Question Bank)
-
-Replace the contents of the respective Question Bank files
-
-Ensure each question ends with ? or .
-
-Run the rebuild scripts:
-
-RAG_WO_G_AI_Rebuild.py
-
-RAG_WO_G_ML_Rebuild.py
-(This regenerates the FAISS index and stored texts)
-
-Do NOT modify the *_Runtime.py files
-
-These are read-only runtime loaders used by Streamlit
-
-Run RAG_WO_G_Streamlit.py again to query your customized data
-
-## Optional Reading
-
-For detailed design philosophy and architectural decisions, see DESIGN_DETAILS.md.
+### Installation
+```bash
+pip install -r requirements.txt
+```
