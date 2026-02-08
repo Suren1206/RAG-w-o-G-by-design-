@@ -22,20 +22,8 @@ This self-help tool has been extremely useful for me. However, it works best whe
 
 Sharing with delight.
 
-## Setup & Run
-### Prerequisites
 
-Python 3.9+
 
-OpenAI API key available as an environment variable
-
-Installation
-
-pip install -r requirements.txt
-
-Run
-
-streamlit run RAG_WO_G_Streamlit.py
 
 ## How to Use the Tool
 ### Quick Start (No Customization)
