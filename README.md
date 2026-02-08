@@ -38,3 +38,7 @@ Sharing with delight.
 ```bash
 pip install -r requirements.txt
 ```
+### Run
+```bash
+streamlit run RAG_WO_G_Streamlit.py
+```
