@@ -42,3 +42,35 @@ pip install -r requirements.txt
 ```bash
 streamlit run RAG_WO_G_Streamlit.py
 ```
+---
+
+## How to Use the Tool
+
+### Quick Start (No Customization)
+
+1. Download or clone the entire repository locally  
+2. Run `RAG_WO_G_Streamlit.py`  
+3. Select **AI** or **ML** question bank  
+4. Enter a query to retrieve semantically similar questions  
+
+---
+
+### Customization (Using Your Own Question Bank)
+
+1. Replace the contents of the respective Question Bank files  
+2. Ensure each question ends with `?` or `.`  
+3. Run the rebuild scripts:
+   - `RAG_WO_G_AI_Rebuild.py`
+   - `RAG_WO_G_ML_Rebuild.py`  
+   *(This regenerates the FAISS index and stored texts)*
+
+4. **Do NOT modify the `*_Runtime.py` files**  
+   These are read-only runtime loaders used by Streamlit
+
+5. Run `RAG_WO_G_Streamlit.py` again to query your customized data
+
+---
+
+### Optional Reading
+For detailed design philosophy and architectural decisions, see `DESIGN_DETAILS.md`.
+
