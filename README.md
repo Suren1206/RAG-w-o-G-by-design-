@@ -28,12 +28,6 @@ Sharing with delight.
 - Python 3.9+
 - OpenAI API key available as an environment variable
 
-## Setup & Run
-
-### Prerequisites
-- Python 3.9+
-- OpenAI API key available as an environment variable
-
 ### Installation
 ```bash
 pip install -r requirements.txt
