@@ -1,0 +1,346 @@
+Pre-Tests : Warm up Q&A 1) In a neural network, what problem does the vanishing gradient cause; How do architectures like LSTM/GRU or techniques like ReLU activation solve it?
+2) Transformers avoid recurrence entirely, yet they capture long-range dependencies better than RNNs; Explain how the self-attention mechanism enables this, and why it scales better than RNNs for long sequences?
+3) Explain what essentially is contained in Q, K and V; just intution pls?
+4) how is V different from K ; is it K is more a draft info and V is final info?
+5) Explain the concept of attention weights; How are they computed, and why is the softmax(QKᵀ/√dₖ) formulation crucial for stable training; Kindly also give an intutitive understanding on how multiple attention heads operate and help the neural network?
+6) Let us assume there are 8 words in a sequence, how does the transformer ensure that all the available attention heads (hope it is a finite number !!) are engaged to cover all the aspects about all the 8 words; I am not clear here as I understand the number of attention heads is same across the sequence; pls make it very crisp and an intituitive understanding ?
+7) In attention head mechanism of transformer, for each head focussing on different types of patterns is there a standard strate / sequence / priority which is used by transformers - asking this since I am aware that attention heads is more a config decision and i am trying to understand if what needs to be attended is graded according to priority and possibility based on the number of heads available; Pls answer at high level only?
+8) How is duplication and redundancy avoided if this is an emergent behaviour; please also explain those bullets that you have given towards the end of your response ?
+9) During inference, transformers use something called a “KV Cache”; Explain what it stores, and why it dramatically speeds up autoregressive generation ?
+10) Large transformer models show “emergent specialization” of attention head; .
+Explain what this means and why it matters for model interpretability and robustness?
+11) Can we say KV cache represents the "merged" memory of GRU-RNN model or rather functionally this is what GRU-RNN outperformed LSTM model ; OR KV cache is more advanced than what GRU-RNN tried to do ?
+12) How KV cache enables 10× faster inference?
+13) Can we say as on date KV cache technology is the best available OR there have been further advancements to the same - if not new technology any significant improvement over what transformers were originally envisaged ?
+14) Explain the difference between perplexity and cross-entropy in language models (n-gram, RNN, transformer), Why is perplexity often used as an evaluation metric, and how is it mathematically related to the negative log-likelihood?
+15) What is batchnorm AND explain very comprehensively giving the intuition of the same.
+16) A neural network adds hidden layers that create nonlinear transformations, making XOR separable; So you agree that we cannot have an XOR in output layer right ; Typically the question i thought is only about getting XOR output ?
+17) What is the vanishing gradient problem (1 sentence)?
+18) Why is ReLU preferred over sigmoid in deep networks?
+19) What is the main advantage of batch normalization?
+20) What is the intuition behind dropout?
+21) A deeper neural network always has a lower training error than a shallow one, assuming enough epochs and no regularization(True / False).
+22) Dropout works by randomly removing both neurons and their connections during training(True / False).
+23) One sentence: Why does dropout reduce overfitting?
+24) What is teacher forcing in sequence models?
+25) Does increasing the depth of a neural network primarily reduce bias or variance?
+26) BatchNorm helps training deep neural networks; Explain which two problems of deep networks it addresses, and how it fixes them conceptually.
+27) Explain why early stopping is sometimes considered a form of regularization; What “regularization effect” does it create?
+28) Compare Gradient Boosting and Neural Networks in terms of: how they learn from errors,the form of their “residuals,” and how new learners/layers interact with previous ones.
+29) Why does KV-cache dramatically speed up inference in autoregressive LLMs?
+30) Many recent works (e.
+g.
+, Mamba, Retentive Networks, RWKV, Hyena, State-Space Models) try to go beyond KV-cache; What is the core limitation of KV-cache that these new architectures are trying to overcome?
+31) What is the main advantage of ReLU over sigmoid/tanh in hidden layers?
+32) Dropout layers primarily help reduce: variance / bias / both / neither?
+33) How attention is made efficient : (FlashAttention, grouped heads, etc).
+34) How FFNs are structured : (Mixture of Experts).
+35) How training is stabilized : Scaling Transformers to 100+ layers caused chaos until a few key fixes emerged.
+36) explain Full flow of Decoder block.
+37) Sentence formation in the output – right sequence of words flow.
+38) How ChatGPT works without cross-attention mechanism, Baseline Test — Neural Networks → NLP → Transformers → Modern GenAI Section A — MCQ / True–False (15 × 1 = 15 marks) Answer each as MCQ or True/False, as applicable.
+Q1.
+(MCQ) In a standard feedforward neural network, which component is responsible for introducing non-linearity?
+Q2.
+(True / False) Without non-linear activation functions, a deep neural network is functionally equivalent to a single-layer linear model.
+Q3.
+(MCQ) During backpropagation, gradients are computed using: Q4.
+(True / False) Vanishing gradients primarily affect earlier layers in deep networks more than later layers.
+Q5.
+(MCQ) Which optimizer explicitly adapts learning rates using first and second moments of gradients?
+Q6.
+(MCQ) In NLP, tokenization is best described as: Q7.
+(True / False) Word embeddings learned via language modeling objectives encode both syntactic and semantic relationships.
+Q8.
+(MCQ) Which NLP modeling limitation motivated the shift from RNNs/LSTMs to Transformers?
+Q9.
+(True / False) Self-attention allows each token to directly attend to every other token in the sequence.
+Q10.
+(MCQ) In scaled dot-product attention, the scaling factor is applied to: Q11.
+(True / False) Positional encoding is required because self-attention alone is permutation-invariant.
+Q12.
+(MCQ) Which Transformer component primarily determines contextual token representations?
+Q13.
+(True / False) Decoder-only transformer architectures can be trained using next-token prediction alone.
+Q14.
+(MCQ) Which training paradigm enables LLMs to better follow human instructions?
+Q15.
+(True / False) Retrieval-Augmented Generation (RAG) fundamentally changes the base model’s weights during inference.
+Section B — Conceptual Understanding (3 × 3 = 9 marks) Q16.
+Why does increasing network depth often improve representational power but simultaneously increase optimization difficulty?
+Q17.
+Explain why self-attention is more expressive than fixed-window context models in NLP.
+Q18.
+What problem does positional encoding solve in transformers, and why is it insufficient to rely on embeddings alone?
+Section C — Advanced / Horizon-Expanding (2 × 5.
+5 = 11 marks) Analytical depth, synthesis, and clarity expected.
+Q19.
+Large Language Models are often described as statistical next-token predictors.
+Critically analyze this statement and explain what this description captures correctly and what it fails to explain about modern LLM capabilities.
+Q20.
+Compare fine-tuning and Retrieval-Augmented Generation (RAG) as mechanisms for injecting external knowledge into LLM-based systems.
+Your answer should address: Knowledge freshness Scalability Risk of hallucination System-level trade-offs Test 1 — Neural Networks → NLP → Transformers → Modern GenAI Section A — MCQ / True–False (15 × 1 = 15 marks) Q1.
+(MCQ) Which statement best explains why ReLU-like activations improve trainability in deep networks?
+Q2.
+(True / False) Batch normalization primarily addresses optimization stability rather than representational capacity.
+Q3.
+(MCQ) In backpropagation, which quantity is propagated backward through layers?
+Q4.
+(True / False) Exploding gradients are more likely in shallow networks than deep networks.
+Q5.
+(MCQ) Which optimizer property most directly helps escape saddle regions during training?
+Q6.
+(MCQ) Which tokenizer property most directly affects a model’s ability to handle unseen words?
+Q7.
+(True / False) Static word embeddings assign a single vector to a word regardless of context.
+Q8.
+(MCQ) Which limitation of RNNs is not directly solved by increasing hidden state size?
+Q9.
+(True / False) Multi-head attention allows the model to attend to different relational patterns simultaneously.
+Q10.
+(MCQ) In masked self-attention used during decoding, masking ensures that: Q11.
+(True / False) Positional encodings are necessary even when using causal (masked) attention.
+Q12.
+(MCQ) Which transformer component most directly enables parallel processing during training?
+Q13.
+(True / False) Decoder-only transformers can perform conditional generation without an explicit encoder.
+Q14.
+(MCQ) Which training stage most directly improves instruction-following behavior in LLMs?
+Q15.
+(True / False) RAG systems rely on embedding similarity to retrieve relevant external information.
+Section B — Conceptual Understanding (3 × 3 = 9 marks) Answer in clear, structured sentences.
+Q16.
+Explain why residual connections make very deep networks easier to optimize.
+Q17.
+Why does self-attention avoid the information bottleneck that arises in fixed-window or recurrent context models?
+Q18.
+Explain the difference between training-time parallelism and inference-time sequentiality in transformer-based language models.
+Section C — Advanced / Horizon-Expanding (2 × 5.
+5 = 11 marks) Depth, balance, and clarity are expected.
+Q19.
+Explain why LLMs can perform multi-step reasoning despite being trained with a single-step next-token prediction objective.
+Your answer should clearly separate training signal from emergent capability.
+Q20.
+Compare fine-tuning and RAG from the perspective of model behavior over time, addressing: How knowledge changes or degrades Operational maintenance Risk trade-offs Long-term system flexibility.
+Test 2 — Neural Networks → NLP → Transformers → Modern GenAI Section A — MCQ / True–False (15 × 1 = 15 marks) Q1.
+(MCQ) Why do residual connections help prevent vanishing gradients?
+Q2.
+(True / False) Layer normalization stabilizes training by making token representations within a layer have similar statistical properties.
+Q3.
+(MCQ) In backpropagation, what determines how much a parameter should be updated?
+Q4.
+(True / False) Exploding gradients are more common when weights have eigenvalues significantly greater than one.
+Q5.
+(MCQ) Which mechanism most directly helps gradient-based optimizers move through flat or saddle regions?
+Q6.
+(MCQ) Which tokenizer feature most strongly influences how rare words are handled?
+Q7.
+(True / False) Contextual embeddings allow the same word to have different vector representations in different sentences.
+Q8.
+(MCQ) Why do transformers outperform RNNs on long-range dependencies?
+Q9.
+(True / False) Multi-head attention enables learning multiple relational subspaces simultaneously.
+Q10.
+(MCQ) In scaled dot-product attention, what is divided by √dₖ?
+Q11.
+(True / False) Causal masking enforces directionality but does not encode token order.
+Q12.
+(MCQ) Which component makes a decoder-only transformer capable of text generation?
+Q13.
+(True / False) Encoder-only models are typically better suited for semantic similarity than decoder-only models.
+Q14.
+(MCQ) Which model type is most appropriate for retrieval in a RAG pipeline?
+Q15.
+(True / False) Contrastive learning explicitly shapes the geometry of embedding space.
+Section B — Conceptual Understanding (3 × 3 = 9 marks) Q16.
+Explain why vanishing gradients make early layers in deep networks learn slowly.
+Q17.
+Why is self-attention fundamentally different from recurrence in how information is propagated?
+Q18.
+Explain why positional encodings are still needed even when using causal (masked) attention.
+Section C — Advanced / Horizon-Expanding (2 × 5.
+5 = 11 marks) Q19.
+Explain how a single next-token prediction objective can give rise to internal representations that support reasoning, planning, and abstraction.
+Q20.
+From a system-design perspective, explain when RAG is preferable to fine-tuning and when fine-tuning is preferable to RAG.
+Surendran’s Transformer Red-Zone Set (PICKED UP FROM 100 QUESTIONS TEST @ Transformer) These are the questions that map to every major slip you made.
+1 Why is it incorrect to say that Q, K, and V are properties of the token?
+(You initially treated them as intrinsic attributes instead of learned projections.
+) 2 Does masking in masked self-attention zero out values (V) or attention scores (QKᵀ)?
+Why does this distinction matter?
+(Your repeated confusion in Q41 and Q71.
+) 3 Is softmax applied to Q, to K, to V, or to QKᵀ?
+What does it normalize?
+(Q55, Q71, Q95 all touched this.
+) 4 Why does removing softmax break attention qualitatively, even though all math operations still exist?
+(Checkpoint 2.
+) 5 What is the difference between: attention softmax final vocabulary softmax?
+(Q95 and Q99.
+) 6 Why is it wrong to say that attention produces word probabilities?
+(Q95.
+) 7 What exactly does the final linear layer map from and to?
+(Q99.
+) 8 What is the difference between: model dimension sequence length?
+(Q75, Q60.
+) 9 Why does the attention score matrix scale with sequence length but not with batch size?
+(Q60.
+) 10 What is the difference between: attention complexity O(n²) total model computation?
+(Q59.
+) 11 Why does increasing depth not change attention’s O(n²) scaling?
+(Q59.
+) 12 Why does a single attention head not make long-range dependencies impossible?
+(Q77.
+) 13 Why are multi-head attention and model depth not interchangeable?
+(You explicitly struggled with this earlier.
+) 14 What does “causality” in Transformers mean, and where is it enforced?
+(Q41, Q62, Q69.
+) 15 Why does the projection after concatenating heads have nothing to do with causality?
+(Q62.
+) 16 Why is self-attention to self not a problem?
+(Checkpoint 4.
+) 17 What is the difference between: influence on next token direct selection of next token?
+(Q66.
+) 18 Why is vocabulary size orthogonal to sequence length?
+(Q34, Q60.
+) 19 Why does FFN not mix information across tokens?
+(Q53, Q58.
+) 20 Why are FFN weights not shared across layers even though FFNs exist everywhere?
+(Q63.
+) 21 Why is attention permutation-invariant before positional encodings?
+(Q88 and earlier confusion.
+) Test 3 — Neural Networks → NLP → Transformers → Modern GenAI Section A — MCQ / True–False (15 × 1 = 15 marks) Q1.
+(MCQ) Which property of ReLU most directly helps deep networks avoid vanishing gradients?
+Q2.
+(True / False) Layer normalization reduces sensitivity to batch size during training.
+Q3.
+(MCQ) During backpropagation, gradients in early layers are computed using: Q4.
+(True / False) Residual connections allow gradients to bypass nonlinear transformations.
+Q5.
+(MCQ) Which optimizer property most directly prevents getting stuck in flat regions of the loss surface?
+Q6.
+(MCQ) Which tokenizer design choice most strongly affects robustness to misspellings or novel words?
+Q7.
+(True / False) Contextual embeddings depend on the surrounding tokens in a sequence.
+Q8.
+(MCQ) Why do transformers not suffer from the fixed-size memory bottleneck of RNNs?
+Q9.
+(True / False) Different attention heads can learn to focus on different linguistic relationships.
+Q10.
+(MCQ) In attention computation, scaling by √dₖ is applied to: Q11.
+(True / False) Causal masking alone is sufficient to encode word order.
+Q12.
+(MCQ) Which component converts hidden states into probabilities over the vocabulary?
+Q13.
+(True / False) Encoder-only models are commonly used to build embedding models for semantic search.
+Q14.
+(MCQ) Which type of model is most appropriate for ranking or scoring candidate responses during alignment?
+Q15.
+(True / False) Contrastive learning is commonly used to train retrieval embeddings.
+Section B — Conceptual Understanding (3 × 3 = 9 marks) Q16.
+Explain how residual connections improve gradient flow in deep networks.
+Q17.
+Explain why self-attention avoids the lossy compression that occurs in recurrent models.
+Q18.
+Explain why positional encoding and causal masking solve different problems in transformers.
+Section C — Advanced / Horizon-Expanding (2 × 5.
+5 = 11 marks) Q19.
+Explain why next-token prediction at scale leads to models that appear to reason, even though no reasoning objective is explicitly given.
+Q20.
+Explain how fine-tuning and RAG complement each other in a production GenAI system.
+Test 4 — Neural Networks → NLP → Transformers → Modern GenAI (45 marks + 5 bonus) Section A1 — Core MCQ / True–False (15 × 1 = 15 marks) Q1.
+(MCQ) Why does backpropagation require the chain rule?
+Q2.
+(True / False) Vanishing gradients primarily affect early layers in deep networks.
+Q3.
+(MCQ) Which design choice most directly enables parallel computation in transformers?
+Q4.
+(True / False) Residual connections improve optimization even if nonlinear activations are removed.
+Q5.
+(MCQ) Which phenomenon explains why very deep networks were hard to train before residual connections?
+Q6.
+(MCQ) Which tokenizer property most directly helps handle unseen or rare words?
+Q7.
+(True / False) Contextual embeddings assign different vectors to the same word depending on context.
+Q8.
+(MCQ) Why do RNNs suffer from an information bottleneck for long sequences?
+Q9.
+(True / False) Multi-head attention allows a model to attend to multiple relational patterns simultaneously.
+Q10.
+(MCQ) In scaled dot-product attention, division by √dₖ is used to: Q11.
+(True / False) Causal masking encodes both order and directionality in transformers.
+Q12.
+(MCQ) Which component enables a decoder-only model to generate text token by token?
+Q13.
+(True / False) Encoder-only models are commonly used for semantic similarity and retrieval.
+Q14.
+(MCQ) Which model type is most appropriate for ranking candidate responses during alignment?
+Q15.
+(True / False) Contrastive learning explicitly shapes the geometry of embedding space.
+Section A2 — Research Paper–Driven & Ecosystem MCQ / T-F (10 × 1 = 10 marks) (This subsection is evaluated independently and explicitly tracked for bonus consideration.
+) Research Papers (6–7 questions) Q16.
+(MCQ) What was the key contribution of Learning Representations by Back-Propagating Errors (1986)?
+Q17.
+(True / False) “NLP (Almost) from Scratch” demonstrated that deep models could outperform feature-engineered NLP pipelines.
+Q18.
+(MCQ) What made BERT fundamentally different from earlier language models?
+Q19.
+(True / False) The GPT-3 paper showed that scaling alone can produce few-shot learning behavior without gradient updates.
+Q20.
+(MCQ) What is the core insight behind Chain-of-Thought prompting?
+Q21.
+(True / False) Scaling laws show predictable improvements in loss as model size, data, and compute increase.
+Q22.
+(MCQ) What problem does Direct Preference Optimization (DPO) primarily address?
+Q23.
+(True / False) LoRA adapts large models by updating only a small number of additional parameters.
+Ecosystem & Tooling (3–4 questions) Q24.
+(MCQ) Which tool is primarily a framework for chaining LLM calls, tools, and memory?
+Q25.
+(True / False) Hugging Face mainly provides model hosting, datasets, and tooling rather than inference hardware.
+Section B — Conceptual Understanding (3 × 4 = 12 marks) Q26.
+Explain why backpropagation enables deep networks to learn hierarchical representations.
+Q27.
+Explain why self-attention removes the sequential bottleneck present in recurrent models.
+Q28.
+Explain why positional encoding and causal masking are both required in decoder-only transformers.
+Section C — Advanced / Horizon-Expanding (2 × 4 = 8 marks) Q29.
+Explain how scaling laws, next-token prediction, and emergence are connected in modern LLMs.
+Q30.
+From a system-design perspective, explain how LoRA and RAG solve different adaptation problems and why they are often used together.
+Mini Test — Research Papers & GenAI Ecosystem 20 Questions | MCQ + True/False only Section A — Research Papers (14 questions) Q1.
+(MCQ) What did the 1986 backpropagation paper fundamentally enable?
+Q2.
+(True / False) Backpropagation assigns credit locally to each layer without considering the final loss.
+Q3.
+(MCQ) The key contribution of NLP (Almost) from Scratch was showing that: Q4.
+(True / False) “NLP (Almost) from Scratch” relied heavily on manually engineered linguistic features.
+Q5.
+(MCQ) What makes BERT’s pretraining objective fundamentally different from GPT-style models?
+Q6.
+(True / False) BERT is primarily designed for text generation tasks.
+Q7.
+(MCQ) What key behavior did the GPT-3 paper demonstrate?
+Q8.
+(True / False) In-context learning changes model weights during inference.
+Q9.
+(MCQ) The main insight of scaling laws for neural language models is that: Q10.
+(True / False) Scaling laws suggest diminishing returns that are highly irregular and unpredictable.
+Q11.
+(MCQ) Chain-of-Thought prompting improves reasoning mainly by: Q12.
+(True / False) Chain-of-Thought prompting changes the model’s internal parameters.
+Q13.
+(MCQ) What is the core advantage of Direct Preference Optimization (DPO)?
+Q14.
+(True / False) DPO eliminates the need for human preference data.
+Section B — Fine-Tuning, RAG & Ecosystem (6 questions) Q15.
+(MCQ) What problem does LoRA primarily solve?
+Q16.
+(True / False) LoRA modifies only a small number of additional parameters while keeping base weights frozen.
+Q17.
+(MCQ) What is the defining characteristic of Retrieval-Augmented Generation (RAG)?
+Q18.
+(True / False) RAG directly changes the behavior of the model by updating its weights.
+Q19.
+(MCQ) Which tool is best described as a framework for orchestrating LLM calls, tools, and memory?
+Q20.
+(True / False) Ollama focuses on running large language models locally rather than providing cloud APIs.
