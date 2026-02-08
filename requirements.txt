@@ -1,1 +1,9 @@
-
+streamlit
+faiss-cpu
+numpy
+openai
+tiktoken
+python-docx
+docx2txt
+python-dotenv
+langchain-community
